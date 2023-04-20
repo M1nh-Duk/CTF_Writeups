@@ -60,7 +60,7 @@ Elliot came across a mysterious file while investigating a cyber attack. The fil
 
 ![](https://i.imgur.com/BIXS8OW.png)
 
-- Now we must find and dump that file. However, using plugin <code>filescan</code> that file canot be found so digging around with the keyword <code>Document</code> I found many suspicious files and after dumping, the file "I_am_Here.txt.txt.txt" contains Morse code
+- Now we must find and dump that file. However, using plugin <code>filescan</code> that file cannot be found so digging around with the keyword <code>Document</code> I found many suspicious files and after dumping, the file "I_am_Here.txt.txt.txt" contains Morse code
 ![](https://i.imgur.com/lcjGSQD.png)
 - Decode and replace the # sign to get the flag
 ![](https://i.imgur.com/3zwtR8I.png)
