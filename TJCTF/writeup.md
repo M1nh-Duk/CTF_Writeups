@@ -28,9 +28,15 @@ data=binascii.hexlify(data).decode()
 f = open('D:\Download\png_parts\\zsztd_decompressed_data','w')
 f.write(data)
 ```
+- Now we can create a new image with this data
+```
+from PIL import Image
 
-- Now compress with <code>zlib</code> with this linux command <code>zlib-flate -compress < zsztd_decompressed_data > compressed_zlib</code>
-- Then put it in the original IDAT chunk and correct the length as well as the checksum. At here, we cannot see the flag because the question mentions something about half of the size. 
+raw = open('D:\Download\png_parts\\zsztd_decompressed_data','rb').read()
+im = Image.frombytes('RGB',(800,800),raw)
+im.save('D:\Download\\flag.png')
+```
+- At here, we cannot see the flag because the question mentions something about half of the size. 
   Since this image is <code>800x800</code> so the new size is <code>1600x1600</code>. Correct the IHDR checksum as well and get the flag
   
   ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/4d1059f4-f4bc-4036-8cda-a205bc99d09e)
