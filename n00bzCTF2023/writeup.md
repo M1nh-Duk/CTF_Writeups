@@ -22,12 +22,15 @@
   - Amazing Song Lyrics
 
   <h3>Crack & Crack</h3>
+  
   - Using <code>zip2john</code> and <code>pdf2john</code> and <code>john</code> to crack 2 password required and get the flag
  <h3>Avengers</h3>
-  - Got a video file which contains a bunch of changing binary, using this command to extract every frames from it <code>ffmpeg -i flag.avi output_frame%03d.png</code>
+  
+  - Got a video file which contains a bunch of changing binary, using this command to extract every frames from it <br><code>ffmpeg -i flag.avi output_frame%03d.png</code>
   - To read the content of each images and convert to string then use this script: 
-  ```
-  from PIL import Image
+  
+```
+from PIL import Image
 import pytesseract
 import os
 
@@ -57,4 +60,5 @@ except:
     pass
     
 print(flag)
-  ```
+```
+  
