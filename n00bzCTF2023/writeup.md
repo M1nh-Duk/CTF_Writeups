@@ -85,6 +85,7 @@ print(flag)
   
   <h3>Google Form 1</h3>
   - Simply <code>CTRL U and CTRL F</code>
+  
 ![Screenshot 2023-06-10 155605](https://github.com/M1nh-Duk/Writeups/assets/100038173/0d9b9e74-5f49-4e2f-b895-ce7c3197d59d)
 
 <h3>Numbers</h3>
@@ -133,6 +134,7 @@ while True:
   <h3>Mission Moon</h3>
   - Use Google Lens and ChatGPT to solve
   <h3>Lost</h3>
+  
   - This chall is indeed a very intersting one because I spent a lot of time and also the picture is distorted
   ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/574f70c2-e1bc-4d10-8bb6-9428389a8af8)
  - Starting by looking for the bridge in the middle of the picture. Using google lens, it's said some kind of bridge in the SanFransico, USA and after some time searching, it's <code>Oakland Bay Bridge</code> near Golden Gate Bridge.
@@ -142,5 +144,17 @@ while True:
   ![Screenshot 2023-06-11 011739](https://github.com/M1nh-Duk/Writeups/assets/100038173/73a5c3bd-f352-4293-9cea-60762bc39b44)
   
   <h3>Try to hack me</h3>
-- Given a username and a supposedly hint "Try to hack me"
+  
+  - Challenge description: <b>My friend brayannoob gave me a ctf challenge and told me Try to hack me</b> 
+  - Because many CTF contests post all the challenges on their Github after the contest ends so I searched for the user on Github and got an user
+  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/c05d617d-a866-4643-881f-b4be8365a51c)
+  - In his only repo the first to check is the commits this person has made so I checked and got something 
+  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/a5f6b316-0d71-47b1-bfef-cb29629c1b1e)
+  - Another username and password as well as email but the author confirmed that we only need the username not password and email so only the username in the latest commit is valid. Also the second hint reminds me of <code>Try hack me</code> - a famous cybersecurity platform so I searched the username in it and got a user with the flag
+  
+  <h3>The online Odyssey</h3>
+- With the same idea when given an username, I immediately searched for it in Github and got an instargram link which then leads to a google map review and then another username. I searched for it in Twitter and found an user and got the flag 
+  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/10df613c-e443-4f7c-be93-c1954f8e4349)
+
+  
   
