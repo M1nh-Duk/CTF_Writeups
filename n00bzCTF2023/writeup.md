@@ -27,7 +27,7 @@
  <h3>Avengers</h3>
   
   - Got a video file which contains a bunch of changing binary, using this command to extract every frames from it <br><code>ffmpeg -i flag.avi output_frame%03d.png</code>
-  - To read the content of each images and convert to string then use this script: 
+  - To read the content of each images and convert to string then use this script (Use in WSL): 
   
 ```
 from PIL import Image
@@ -61,4 +61,5 @@ except:
     
 print(flag)
 ```
-  
+<h3>Hecked</h3>
+
