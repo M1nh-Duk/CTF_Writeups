@@ -62,4 +62,24 @@ except:
 print(flag)
 ```
 <h3>Hecked</h3>
+- Given a pcap file and the question requires us to find the needed information to make the correct flag as follow:
+  <b>"Flag is n00bz{md5sum(vulnerableService_serviceVersion_attackersFirstBashCommandOnTheHackedServer)}"</b>
+- Simply just open and look around then I found the service is vsFTPd (not FTP), version number and the first command is <code>id</code>
+  
+  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/b5aa68f1-ef10-417e-aec4-3008c11f196f)
+  
+<h3>LSB</h3>
+  
+- As the name provided, we have to extract the LSB stream in this wav file 
+ - Use <code>stegolsb</code> to do it and we have the flag
+  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/e5536521-0078-4ba9-8fe9-809d0b5999c7)
+  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/6c6e26e9-6154-4347-9500-42139071a16d)
+
+<h3>BeepBop</h3>
+  - This is a SSTV audio then just use <code>RXSSTV</code> to get the flag
+  
+  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/cb9dc894-3286-4ebc-963c-71f8fe236d4b)
+  
+ 
+  
 
