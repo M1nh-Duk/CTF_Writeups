@@ -12,7 +12,7 @@
 
   ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/14cd44ae-4efa-41de-94fd-1b8750411ade)
 
-- Đây là phiên bản dễ đọc hơn
+- Đây là phiên bản dễ đọc hơn 
 ```
 Sub Auto_Open()
 Workbook_Open
@@ -121,7 +121,7 @@ End Sub
 
  ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/a4bf0c2b-b89a-490c-9219-42768c452045)
 
-- Sử dụng <code>ScriptBLocking</code> function của Powershell để có được 1 đoạn script nữa sau khi chạy
+- Sử dụng <code>ScriptBLocking</code> của Powershell để có được 1 đoạn script nữa sau khi chạy
 
 ![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/bccaa9e1-8cbb-480e-95e4-53e16234abf8)
 
@@ -256,4 +256,52 @@ for (;;){
 }
 ```
 
-- 
+- Có vẻ như đoạn script này sẽ thực hiện kết nối tới server <code>128.199.207.220</code> để nhận command từ server và gửi result tới server với payload được mã hóa bằng AES CBC (key là <code>d/3KwjM7m2cGAtLI67KlhDuXI/XRKSTkOlmJXE42R+M='</code> còn iv là 16 byte đầu của payload đã base64 decode)
+- Có được các thông tin đó, quay trở lại file pcap và đi tìm command từ server
+![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/b4c284ce-8d3c-4fb0-9950-82340ff0377d)
+
+- Thử decrypt bằng đoạn script dưới đây
+```
+import base64
+from Crypto.Cipher import AES
+
+f = open("base64_payload.txt","r")
+key = 'd/3KwjM7m2cGAtLI67KlhDuXI/XRKSTkOlmJXE42R+M='
+key = base64.b64decode(key)
+data = f.readlines()
+for string in data:
+    # Decode the base64-encoded key and encrypted
+    encrypted = base64.b64decode(string)
+    # Extract the IV from the decoded encrypted
+    iv = encrypted[:16]
+    # Ensure key size is 256 bits
+    if len(key) < 32:
+        key = key.ljust(32, b'\0')
+    elif len(key) > 32:
+        key = key[:32]
+
+    # Ensure block size is 128 bits
+    if len(iv) < 16:
+        iv = iv.ljust(16, b'\0')
+    elif len(iv) > 16:
+        iv = iv[:16]
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    decrypted_string = cipher.decrypt(encrypted).rstrip(b'\0')
+    print("Decrypted string:", str(decrypted_string))
+
+```
+- Decrypt ra các command được gửi từ server
+
+![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/25006559-6d0b-4d35-9f95-69099ac8bdd1)
+
+- Vậy thì giờ chỉ cần đi tìm response từ máy victim gửi đến server với method POST
+
+![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/3986ed1d-3dd3-49c7-ac56-56f4a1c146e8)
+
+- Decrypt ra và có được 1 file ảnh
+  ![Screenshot 2023-07-11 105850](https://github.com/M1nh-Duk/Writeups/assets/100038173/e667da59-61d2-48de-bdd6-768068a31440)
+
+  
+- Đây là mã QR và ném lên cyberchef là có được flag 
+![Screenshot 2023-07-11 111239](https://github.com/M1nh-Duk/Writeups/assets/100038173/908e6952-03f4-44e6-bb9b-eff30c8de033)
+
