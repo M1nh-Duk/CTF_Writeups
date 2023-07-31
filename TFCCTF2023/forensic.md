@@ -22,3 +22,15 @@
 - Now use tshark and a bit of formating to get the flag
 
   ![Screenshot 2023-07-28 210913](https://github.com/M1nh-Duk/Writeups/assets/100038173/b82eda7f-726b-47c2-bb2e-89d215f7eecd)
+
+<h2>SOME TRAFFIC</h2>
+
+- We are given a pcapng file in this chall. After digging around for a while, I found that the user uploaded a PNG
+
+  ![Screenshot 2023-07-31 170352](https://github.com/M1nh-Duk/Writeups/assets/100038173/4ce9eab3-1933-4c1b-95e2-71c73ef56b60)
+
+- Get the PNG and use <code>zsteg</code> to get the flag
+
+![image](https://github.com/M1nh-Duk/Writeups/assets/100038173/202abff2-4e43-4a91-8fe6-e07d10904b5b)
+
+  
